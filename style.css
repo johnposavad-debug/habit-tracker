@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.habit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.habit input {
+  width: 20px;
+  height: 20px;
+}
