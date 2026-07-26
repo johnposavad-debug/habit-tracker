@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configure Habits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html" class="page-icon-btn calendar-btn" aria-label="Back to today">&#128197;</a>
+
+  <div class="card">
+    <h2 class="config-heading">Manage Habits</h2>
+
+    <div id="config-habit-list" class="config-habit-list"></div>
+
+    <div class="new-habit-row">
+      <input type="text" id="new-habit-input" maxlength="25" placeholder="New habit">
+      <button id="add-habit-btn" class="add-btn" aria-label="Add habit">+</button>
+    </div>
+
+    <p id="limit-message" class="limit-message">You've reached the 100 habit limit.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
