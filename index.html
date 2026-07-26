@@ -7,18 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="top-bar">
-    <button id="prev-day" class="arrow-btn" aria-label="Previous day">&#8249;</button>
-    <span id="date-display"></span>
-    <button id="next-day" class="arrow-btn" aria-label="Next day">&#8250;</button>
+  <div class="card">
+    <div class="top-bar">
+      <button id="prev-day" class="arrow-btn" aria-label="Previous day">&#8249;</button>
+      <span id="date-display"></span>
+      <button id="next-day" class="arrow-btn" aria-label="Next day">&#8250;</button>
+    </div>
+
+    <h1>John's Habit Tracker</h1>
+
+    <label class="habit">
+      <input type="checkbox" id="early-walk">
+      <span class="checkmark"></span>
+      <span class="habit-text">Early walk</span>
+    </label>
   </div>
-
-  <h1>John's Habit Tracker</h1>
-
-  <label class="habit">
-    <input type="checkbox" id="early-walk">
-    Early walk
-  </label>
 
   <script src="script.js"></script>
 </body>

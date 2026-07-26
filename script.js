@@ -22,9 +22,7 @@ function render() {
     day: 'numeric'
   });
 
-  const checked = localStorage.getItem(storageKey(currentDate)) === 'true';
-  checkbox.checked = checked;
-  checkbox.parentElement.style.textDecoration = checked ? 'line-through' : 'none';
+  checkbox.checked = localStorage.getItem(storageKey(currentDate)) === 'true';
 }
 
 function changeDay(offset) {
@@ -34,7 +32,6 @@ function changeDay(offset) {
 
 checkbox.addEventListener('change', () => {
   localStorage.setItem(storageKey(currentDate), checkbox.checked);
-  checkbox.parentElement.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
 });
 
 document.getElementById('prev-day').addEventListener('click', () => changeDay(-1));
