@@ -1,13 +1,45 @@
 const checkbox = document.getElementById('early-walk');
+const dateDisplay = document.getElementById('date-display');
 
-function applyState(checked) {
+let currentDate = new Date();
+
+function dateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function storageKey(date) {
+  return `early-walk-${dateKey(date)}`;
+}
+
+function render() {
+  dateDisplay.textContent = currentDate.toLocaleDateString(undefined, {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const checked = localStorage.getItem(storageKey(currentDate)) === 'true';
   checkbox.checked = checked;
   checkbox.parentElement.style.textDecoration = checked ? 'line-through' : 'none';
 }
 
-applyState(localStorage.getItem('early-walk') === 'true');
+function changeDay(offset) {
+  currentDate.setDate(currentDate.getDate() + offset);
+  render();
+}
 
 checkbox.addEventListener('change', () => {
-  localStorage.setItem('early-walk', checkbox.checked);
-  applyState(checkbox.checked);
+  localStorage.setItem(storageKey(currentDate), checkbox.checked);
+  checkbox.parentElement.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
 });
+
+document.getElementById('top-prev').addEventListener('click', () => changeDay(-1));
+document.getElementById('top-next').addEventListener('click', () => changeDay(1));
+document.getElementById('side-prev').addEventListener('click', () => changeDay(-1));
+document.getElementById('side-next').addEventListener('click', () => changeDay(1));
+
+render();
