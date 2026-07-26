@@ -16,9 +16,9 @@ function storageKey(date) {
 
 function render() {
   dateDisplay.textContent = currentDate.toLocaleDateString(undefined, {
-    weekday: 'long',
+    weekday: 'short',
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric'
   });
 
