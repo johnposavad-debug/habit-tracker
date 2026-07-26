@@ -5,43 +5,25 @@ body {
   padding: 0 20px;
 }
 
-.date-nav {
+.top-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.date-nav button {
-  font-size: 1.2em;
-  padding: 4px 12px;
-  cursor: pointer;
-}
-
-#date-display {
-  font-size: 1.1em;
-  min-width: 180px;
-  text-align: center;
-}
-
-.side-arrow {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+.arrow-btn {
   font-size: 2em;
-  padding: 8px 14px;
+  line-height: 1;
+  padding: 4px 12px;
   cursor: pointer;
   background: none;
   border: none;
 }
 
-#side-prev {
-  left: 10px;
-}
-
-#side-next {
-  right: 10px;
+#date-display {
+  font-size: 1.1em;
+  text-align: center;
 }
 
 .habit {

@@ -37,9 +37,7 @@ checkbox.addEventListener('change', () => {
   checkbox.parentElement.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
 });
 
-document.getElementById('top-prev').addEventListener('click', () => changeDay(-1));
-document.getElementById('top-next').addEventListener('click', () => changeDay(1));
-document.getElementById('side-prev').addEventListener('click', () => changeDay(-1));
-document.getElementById('side-next').addEventListener('click', () => changeDay(1));
+document.getElementById('prev-day').addEventListener('click', () => changeDay(-1));
+document.getElementById('next-day').addEventListener('click', () => changeDay(1));
 
 render();
